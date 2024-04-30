@@ -6,10 +6,10 @@
  */
 
 import * as React from "react"
+import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
-
+import { Global, css } from '@emotion/react'
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,24 +24,19 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Global
+        styles={css`
+        
+      `}
+      />
+      <Helmet>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
+      <div>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer>
+          <p>© {new Date().getFullYear()}.</p>
         </footer>
       </div>
     </>
