@@ -5,7 +5,7 @@ import Navigation from "./navigation"
 
 const Header = ({ siteTitle }) => (
   <header css={css`
-    background-color: #333;
+    background-color: #222;
     padding: 1rem;
   `}>
     <div css={css`
