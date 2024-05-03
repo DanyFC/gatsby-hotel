@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
 import { Global, css } from '@emotion/react'
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -61,9 +62,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
-        <footer>
-          <p>© {new Date().getFullYear()}.</p>
-        </footer>
+        <Footer siteTitle={data.site.siteMetadata?.title || `Title`} />
       </div>
     </>
   )

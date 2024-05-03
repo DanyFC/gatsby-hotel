@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
 import * as React from 'react'
+import Seo from './../components/seo'
 import Layout from './../components/layout'
 
 export const query = graphql`
@@ -39,9 +40,16 @@ const RoomTemplate = ({ data }) => {
           text-align: center;
         `}>{title}</h1>
         <p>{content}</p>
-        <GatsbyImage image={img} alt={title}/>
+        <GatsbyImage image={img} alt={title} />
       </main>
     </Layout>
+  )
+}
+
+export const Head = ({ data }) => {
+  const { title } = data.allDatoCmsRoom.nodes[0]
+  return (
+    <Seo title={title} />
   )
 }
 

@@ -37,7 +37,7 @@ const Rooms = () => {
 
   return (
     <div css={css`
-      margin: 6rem auto;
+      margin: 6rem auto 0 auto;
     `}>
       <h1 css={css`
         text-align: center;
