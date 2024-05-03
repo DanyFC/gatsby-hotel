@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Hero from "../components/hero"
 import PageDescription from "../components/pageDescription"
+import Rooms from "../components/rooms"
 
 const IndexPage = () => {
 
@@ -10,6 +11,7 @@ const IndexPage = () => {
     <Layout>
       <Hero />
       <PageDescription />
+      <Rooms />
     </Layout>
   )
 }

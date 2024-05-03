@@ -27,16 +27,20 @@ const Layout = ({ children }) => {
       <Global
         styles={css`
         html {
+          box-sizing: border-box;
           font-size: 62.5%;
         }
+        *, ::after, ::before {
+          box-sizing: inherit;
+        }
         body {
+          font-family: 'PT Sans', sans-serif;
           font-size: 1.6rem;
           line-height: 1.5;
-          font-family: 'PT Sans', sans-serif;
         }
         h1, h2,h3 {
-          margin: 0;
           line-height: 1.5;
+          margin: 0;
         }
         h1, h2 {
           font-family: 'Roboto', sans-serif;
